@@ -3,11 +3,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add New Album</title>
+        <title>Update An Album</title>
         <link rel="stylesheet" type="text/css" href="style.css"
     </head>
     <body>
-        <h1>Add A New Album</h1>
+        <h1>Update An Album</h1>
         
         <form name="addForm" action="read.jsp" method="post">
             <table>
