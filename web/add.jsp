@@ -9,7 +9,7 @@
     <body>
         <h1>Add A New Album</h1>
         
-        <form name="addForm" action="read.jsp" method="post">
+        <form name="addForm" action="addAlbum" method="get">
             <table>
                 <tbody>
                     <tr>

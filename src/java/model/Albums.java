@@ -69,5 +69,9 @@ public class Albums {
     public String toString() {
         return "Albums{" + "albumID=" + albumID + ", albumName=" + albumName + ", artistName=" + artistName + ", yearOfRelease=" + yearOfRelease + ", genre=" + genre + '}';
     }
+
+    public void setAlbumName(Albums album) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

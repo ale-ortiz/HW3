@@ -13,7 +13,7 @@
         <h1>Alejandro's Favorite Albums!</h1>
         <div class="d">
         <%= table %>
-        <a href="add.jsp">Add A New Album</a>
+        <a href="add">Add A New Album</a>
         </div>
         <div class="d3"><a href="index.jsp">Home</a></div>
     </body>

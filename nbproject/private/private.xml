@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file://home.iowa.uiowa.edu/aleortiz/NetBeansProjects/albumsApp/src/java/dbHelpers/ReadQuery.java</file>
-            <file>file://home.iowa.uiowa.edu/aleortiz/NetBeansProjects/albumsApp/src/java/controller/Read.java</file>
-            <file>file://home.iowa.uiowa.edu/aleortiz/NetBeansProjects/albumsApp/web/read.jsp</file>
+            <file>file://home.iowa.uiowa.edu/aleortiz/NetBeansProjects/albumsApp/src/java/dbHelpers/AddQuery.java</file>
+            <file>file://home.iowa.uiowa.edu/aleortiz/NetBeansProjects/albumsApp/web/add.jsp</file>
+            <file>file://home.iowa.uiowa.edu/aleortiz/NetBeansProjects/albumsApp/src/java/controller/AddServlet.java</file>
         </group>
     </open-files>
 </project-private>
