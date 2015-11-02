@@ -78,13 +78,13 @@ public class AddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String album = request.getParameter("album");
+        String albumName = request.getParameter("album");
         String artist = request.getParameter("artist");
         int year = Integer.parseInt(request.getParameter("year"));
         String genre = request.getParameter("genre");
 
         Albums album = new Albums();
-        album.setAlbumName(album);
+        album.setAlbumName(albumName);
         album.setArtistName(artist);
         album.setYearOfRelease(year);
         album.setGenre(genre);
