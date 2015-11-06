@@ -12,22 +12,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Albums;
 
-public class ReadQuery {
+
+public class SearchQuery {
+    
     private Connection conn;
     private ResultSet results;
     
-    public ReadQuery(){
+    public SearchQuery(){
         Properties props = new Properties();
         InputStream instr = getClass().getResourceAsStream("dbConn.properties");
         try {
             props.load(instr);
         } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             instr.close();
         } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         String driver = props.getProperty("driver.name");
@@ -37,26 +39,30 @@ public class ReadQuery {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             conn = DriverManager.getConnection(url, username, passwd);
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-public void doRead(){
     
+    public void doSearch (String albumName){
+        
         try {
-            String query = "Select * from albums ORDER BY albumID ASC";
+            String query = "SELECT * FROM albums WHERE UPPER(albumName) LIKE ? ORDER BY albumID ASC";
+            
             PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + albumName.toUpperCase() + "%");
             this.results = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-}
-
-public String getHTMLTable(){
+        
+    }
+    
+    public String getHTMLTable(){
     String table = "";
     table += "<table border=1>";
     
@@ -97,11 +103,15 @@ public String getHTMLTable(){
                 table += "</tr>";
                 
             }   } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     table += "</table>";
     
     return table;
 }
+
+    public void doUpdate(String albumName) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

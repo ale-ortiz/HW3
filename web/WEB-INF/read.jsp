@@ -24,7 +24,9 @@
                 </tbody>
             </table>
         <%= table %>
-        <a href="add">Add A New Album</a>
+        <a href="add">Add A New Album</a
+         <br><br>
+        <a href="search.jsp">Search Friends</a>
         </div>
         <div class="d3"><a href="index.jsp">Home</a></div>
     </body>
